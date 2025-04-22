@@ -1,0 +1,43 @@
+{
+  "name": "excel-processor-app",
+  "version": "1.0.0",
+  "description": "Aplicación para procesar archivos Excel",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "dependencies": {
+    "xlsx-populate": "^1.21.0"
+  },
+  "devDependencies": {
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.example.excelprocessor",
+    "productName": "Excel Processor",
+    "win": {
+      "target": "nsis",
+      "icon": "./assets/baby-21_119887.png"
+    },
+    "files": [
+      "**/*",
+      "dist/**/*",
+      "node_modules/**/*",
+      "index.html",
+      "main.js",
+      "excelProcessor.js"
+    ],
+    "asar": false,
+    "nodeGypRebuild": false,
+    "npmRebuild": false,
+    "extraResources": [
+      "excelProcessor.js",
+      "node_modules/**/*"
+    ]
+  }
+}
